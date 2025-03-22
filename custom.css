@@ -1,0 +1,132 @@
+
+/* Custom CSS styles to supplement Tailwind */
+
+/* Card flip animation styles */
+.card {
+  width: 100%;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  font-weight: bold;
+}
+
+.card-front {
+  background-color: #2563eb;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #2563eb;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 40px;
+  transform: rotateY(0deg);
+  font-style: italic; /* Italic effect */
+}
+
+.card-back {
+  background-color: #2563eb;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #2563eb;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 40px;
+  transform: rotateY(180deg);
+  text-transform: uppercase; /* Makes text uppercase */
+  letter-spacing: 2px; /* Adds spacing between letters */
+}
+
+/* Form styling */
+.custom-form-container {
+  --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: beige;
+  --main-color: black;
+  padding: 40px;
+  background: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 10px;
+  border: 3px solid var(--main-color);
+  box-shadow: 6px 6px var(--main-color);
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.custom-form-control {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: 3px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 10px;
+  outline: none;
+}
+
+.custom-form-control:focus {
+  border: 3px solid var(--input-focus);
+}
+
+textarea.custom-form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.custom-button-submit {
+  width: 150px;
+  height: 45px;
+  border-radius: 5px;
+  border: 3px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--font-color);
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.custom-button-submit:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
+}
+
+/* Custom media queries */
+@media (max-width: 768px) {
+  .custom-form-container {
+    padding: 1.5rem;
+  }
+}
